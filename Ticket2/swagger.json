@@ -1,0 +1,218 @@
+{
+	"swagger": "2.0",
+	"info":{
+		"version": "1.0.0",
+        "title": "Bibtel Ticket Api",
+		"description": "bibtel api ticket"
+	},
+	"host":"localhost:4000",
+	"basePath":"",
+	"tags":[
+		{
+			"name":"Ticket",
+			"description":"API for ticket in tickets"
+		}
+	],
+	"schemes": [
+        "http"
+	],
+	"paths": {
+        "/create_ticket": {
+            "post": {
+                "tags": [
+                    "Ticket"
+                ],
+                "summary": "create new ticket",
+                "description": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+					"name": "ticket", 
+					"required": true,
+                    "description": "create new ticket",
+                    "schema": {
+                        "$ref": "#/definitions/ticket"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+		},
+		"/my_tickets": {
+            "post": {
+                "tags": [
+                    "Ticket"
+                ],
+                "summary": "get my tickets",
+                "description": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "ticket",
+                    "description": "get my tickets",
+                    "schema": {
+                        "$ref": "#/definitions/ticket"
+                    }
+				},
+				{
+					"in": "query",
+					"type": "string",
+					"name": "user_id",
+					"description": "",
+					"required": true
+				}
+			],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+		},
+		"/answer_ticket": {
+            "post": {
+                "tags": [
+                    "Ticket"
+                ],
+                "summary": "answer ticket",
+                "description": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "answer ticket",
+                    "description": "get my tickets",
+                    "schema": {
+                        "$ref": "#/definitions/ticketmessage"
+                    }
+				}
+			],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+		},
+		"/ticket": {
+            "get": {
+                "tags": [
+                    "Ticket"
+                ],
+                "summary": "get all ticket and answer tickets",
+                "description": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "query",
+                    "name": "get all ticket and answer tickets",
+                    "description": "get all tickets",
+                    "schema": {
+                        "$ref": "#/definitions/ticketmessage"
+                    }
+				},
+				{
+					"in": "query",
+					"type": "string",
+					"name": "ticket_id",
+					"description": "",
+					"required": true
+				}
+			],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+		}
+	},
+	"definitions":{
+		"ticket":{
+			"properties":{
+				"question":{
+					"type":"string"
+				},
+				"code":{
+					"type":"number"
+				},
+				"user_id":{
+					"type":"mongoose.Types.ObjectId",
+					"ref":"User"
+				},
+				"op_unreads":{ 
+					"type":"number",
+					"default":0
+				},
+				"user_unreads":{ 
+					"type":"number",
+					"default":0
+				}, 
+				"fulltime": [{
+					"date": {
+						"type": "string",
+						"required": "true"
+					},
+					"time": {
+						"type": "string",
+						"required": "true"
+					}
+				}]
+			}
+		},
+		"ticketmessage":{
+			"properties":{
+			"text":{
+				"type":"string",
+				"trim":"true",
+				"required": "true"
+			},
+			"role": {
+				"type": "string",
+				"trim": "true",
+				"required": "true",
+				"enum": ["user","operator"]
+			},
+			"ticket_id":{ 
+				"type":"mongoose.Types.ObjectId",
+				"ref":"Ticket"
+			},
+			"fulltime": [{
+				"date": {
+					"type": "string",
+					"required": "true"
+				},
+				"time": {
+					"type": "string",
+					"required": "true"
+				}
+			}]
+		}
+	}
+	}
+}
