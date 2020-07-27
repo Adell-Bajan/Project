@@ -9,8 +9,8 @@
       <div
         style="margin-top: 38px;padding: 0px; border-radius:10px;"
       >
-        <div class="container bootstrap snippet" style="margin-left: -10px;">
-          <div class="col-md-8 col-sm-12 col-xs-12">
+        <div class="bootstrap snippet" style="margin-left: -10px;">
+          <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="row">
               <div class="col-md-12">
                 <div class="widget-box">
