@@ -9,10 +9,11 @@ import GlobalDirectives from './globalDirectives'
 import SideBar from './components/SidebarPlugin'
 
 // asset imports
-import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap/dist/css/bootstrap.css'
 import './assets/sass/light-bootstrap-dashboard.scss'
 import './assets/css/demo.css'
 import './assets/css/style.css'
+import './assets/css/bootstrap.min.css'
 
 /**
  * This is the main Light Bootstrap Dashboard Vue plugin where dashboard related plugins are registerd.
