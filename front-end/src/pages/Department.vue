@@ -5,83 +5,44 @@
       rel="stylesheet"
       id="bootstrap-css"
     />
+
     <div class="container">
-      <div
-        style="margin-top: 38px;padding: 0px; border-radius:10px;"
-      >
-        <div class="bootstrap snippet" style="margin-left: -10px;">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="widget-box">
-                  <div class="widget-body">
-                    <div class="widget-main no-padding">
-                      <div
-                        class="tickets-container"
-                        style="margin-top: 0px;width: 1095px;margin-left: -16px;"
-                      >
-                        <h3>
-                          <b
-                            style="margin-left: 915px;position: absolute;margin-top: -20px;"
-                          >دپارتمان ها</b>
-                        </h3>
-                        <h6>
-                          <b
-                            style="margin-left: 939px;position: absolute;margin-top: 20px;font-size: 11px;color: rgb(87, 192, 216);"
-                          >دپارتمان / دپارتمان</b>
-                        </h6>
-                        <ul class="tickets-list">
-                          <div class="panel panel-info" style="width: 570px;margin-left: 470px;border-color: rgb(255, 255, 255);margin-top: 85px;border-radius: 13px;">
-                            <div
-                              class="panel-heading"
-                              style="background-color: #297ce7;border-color: #297ce7;border-radius: 11px 11px 0px 0px;height: 55px;text-align: right;"
-                            >
-                              <div class="panel-title" style="color: white;">افزودن دپارتمان جدید</div>
-                            </div>
-
-                            <div style="padding-top:30px;height: 95px;" class="panel-body">
-                              <div
-                                style="display:none"
-                                id="login-alert"
-                                class="alert alert-danger col-sm-12"
-                              ></div>
-
-                              <form
-                                id="loginform"
-                                class="form-horizontal"
-                                @submit.prevent="handleSubmitForm"
-                              >
-							  <b>
-								  <input class="form-control" type="text" v-model="department.name" placeholder="... لطفا دپارتمان مورد نظر خود را وارد نمایید" required style="margin-left: 186px;font-size: 13px;text-align: center;width: 337px;border-radius: 11px;height: 43px;margin-bottom: 10px;box-shadow: none;margin-top: -6px;border-color: #eee;background-color: #eee;">
-                                <div style="margin-top:10px" class="form-group">
-                                  <div class="col-sm-12 controls">
-                                    <button
-                                      class="btn btn-info"
-                                      style="font-size: 18px;color: rgb(255, 255, 255);margin-left: 20px;background-color: rgb(63, 225, 108);border-color: rgb(30, 185, 73);width: 139px;height: 40px;margin-top: -86px;border: 2px solid #50c98c;border-radius: 13px;"
-                                    >ثبت دپارتمان</button>
-                                  </div>
-                                </div>
-								</b>
-                              </form>
-                            </div>
-                          </div>
-                        </ul>
-						<div style="width: 566px;border: 0px solid black;height: 40px;background-color: white;margin-left: 472px;border-radius: 9px;margin-top: -8px;">
-							<div><b style="position: absolute;margin-left: 465px;margin-top: 9px;">Name Depar</b></div>
-							<div><b style="position: absolute;margin-left: 265px;margin-top: 9px;">Edit Depar</b></div>
-							<div><b style="position: absolute;margin-left: 46px;margin-top: 9px;">Remove Depar</b></div>
-						</div>
-						<div  v-for="item in departments" :key="item._id" style="width: 566px;border: 0px solid black;height: 40px;background-color: white;margin-left: 472px;border-radius: 9px;margin-top: 5px;">
-							<div><b style="position: absolute;margin-left: 465px;margin-top: 9px;color: lightblue;">{{item.name}}</b></div>
-							<!-- <div><b style="position: absolute;margin-left: 265px;margin-top: 9px;">Edit Depar</b></div> -->
-							<button  class="btn btn-defualt" style="position: absolute;margin-left: 265px;margin-top: 4px;"><b>Edit Depar</b></button>
-							<button @click.prevent="deletedepartment(item._id)" class="btn btn-danger" style="background-color: #ef2121;margin-left: 46px;position: absolute;margin-top: 2px;width: 75px;height: 35px;margin-top: 5px;">Remove</button>
-						</div>
-                      </div>
-                    </div>
+      <div class="row hb-wrapper">
+        <div class="col-md-12">
+          <h3 class="mb-0">دپارتمان ها</h3>
+          <p>
+            <ol class="breadcrumb pr-0">
+              <li class="breadcrumb-item"><a href="#"><small>دپارتمان</small></a></li>
+              <li class="breadcrumb-item active"><a href="#"><small>دپارتمان</small></a></li>
+            </ol>
+          </p>
+        </div>
+        <div class="col-md-12">
+          <div class="panel panel-primary">
+            <div class="panel-heading">افزودن دپارتمان جدید</div>
+            <div class="panel-body">
+              <div>
+                <form class="form-inline" @submit.prevent="handleSubmitForm">                  
+                  <div class="form-group mx-sm-3 mb-2">
+                    <input type="text" v-model="department.name"                                    
+                                    required class="form-control hb-add-department" placeholder="لطفا دپارتمان مورد نظر خود را وارد نمایید ...">
                   </div>
-                </div>
-              </div>
+                  <button type="submit" class="btn btn-success mb-2">ثبت دپارتمان</button>
+                </form>
+                <hr>
+              </div> 
+              <div>
+                <ul class="list-group">
+                  <li class="list-group-item d-flex justify-content-between align-items-center" v-for="item in departments"
+                          :key="item._id">
+                    {{item.name}}
+					<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="64" viewBox="0 0 172 172" style="fill: rgb(0, 0, 0);width: 25px;margin-right: 900px;cursor: pointer;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#3498db"><path d="M129.26245,9.28027c-2.78198,0 -5.56396,1.00781 -7.60059,3.04443l-11.39038,11.40088c-2.09961,-2.09961 -5.51147,-2.09961 -7.60059,0l-15.20117,15.20117c-1.01831,1.01831 -1.58521,2.37256 -1.58521,3.81079c0,1.42773 0.5669,2.78198 1.58521,3.78979l0.12598,0.13647l-72.77246,72.65698c-1.35425,1.35425 -2.1731,3.14941 -2.33057,5.06006l-1.81616,22.5603l-1.88965,13.22754c-0.12598,0.83984 0.15747,1.67969 0.76636,2.28858c0.50391,0.50391 1.18628,0.77685 1.88965,0.77685c0.13647,0 0.26245,0 0.38843,-0.02099l13.21704,-1.87915l22.69678,-1.67969c1.93164,-0.13647 3.7373,-0.96582 5.10205,-2.33057l72.77246,-72.66748c0.99731,0.93433 2.27808,1.45923 3.65332,1.45923c1.43823,0 2.78198,-0.5564 3.80029,-1.57471l15.20117,-15.20117c2.09961,-2.09961 2.09961,-5.50098 0,-7.60059l11.41138,-11.40088c2.02612,-2.03662 3.13892,-4.73462 3.13892,-7.61108c0,-2.86597 -1.11279,-5.57446 -3.14941,-7.60059l-22.80176,-22.80176c-2.02613,-2.03662 -4.8186,-3.04443 -7.61109,-3.04443zM129.26245,14.60278c1.39624,0 2.79248,0.50391 3.81079,1.52222l22.80176,22.80176c1.01831,1.01831 1.57471,2.36206 1.57471,3.80029c0,1.43823 -0.5564,2.79248 -1.57471,3.80029l-11.40088,11.41138l-30.41284,-30.41284l11.41138,-11.40088c1.00781,-1.01831 2.40405,-1.52222 3.78979,-1.52222zM106.46069,27.52588l1.91065,1.90015l34.20264,34.20264l1.90015,1.91065l-3.80029,3.78979c-1.0498,-1.0498 -2.75049,-1.0498 -3.80029,0l-3.80029,3.81079c-1.0498,1.0498 -1.0498,2.75049 0,3.80029l-3.80029,3.80029l-38.01343,-38.01343l3.80029,-3.80029c0.5249,0.5249 1.20728,0.78735 1.90015,0.78735c0.69287,0 1.37524,-0.26245 1.90015,-0.78735l3.81079,-3.80029c1.0498,-1.0498 1.0498,-2.75049 0,-3.80029zM110.27148,40.03955c-0.69287,0 -1.37524,0.26245 -1.90015,0.78735l-3.81079,3.80029c-1.0498,1.0498 -1.0498,2.75049 0,3.80029c0.5249,0.5249 1.21777,0.78735 1.90015,0.78735c0.69287,0 1.38574,-0.26245 1.91065,-0.78735l3.78979,-3.80029c1.0603,-1.0498 1.0603,-2.75049 0,-3.80029c-0.5249,-0.5249 -1.20728,-0.78735 -1.88965,-0.78735zM119.76172,49.55078c-0.68237,0 -1.36474,0.25195 -1.88965,0.78735l-3.81079,3.78979c-1.0498,1.0603 -1.0498,2.75049 0,3.81079c0.5249,0.5144 1.21777,0.77685 1.91065,0.77685c0.68237,0 1.37524,-0.26245 1.90015,-0.77685l3.78979,-3.81079c1.0603,-1.0498 1.0603,-2.73999 0,-3.78979c-0.5249,-0.5354 -1.20727,-0.78735 -1.90015,-0.78735zM91.40649,50.46411l30.40234,30.41284l-70.67285,70.55737l-2.56152,-12.80762l44.58521,-44.5852c1.0498,-1.0498 1.0498,-2.75049 0,-3.80029c-1.0498,-1.0498 -2.73999,-1.0498 -3.80029,0l-44.5957,44.5957l-6.33032,-1.27026l-1.27026,-6.34082l36.99512,-36.98462c1.0603,-1.0603 1.0603,-2.75049 0,-3.81079c-1.0498,-1.0498 -2.73999,-1.0498 -3.78979,0l-36.99512,36.99512l-12.53467,-2.49853zM129.27295,59.04102c-0.69287,0 -1.37524,0.26245 -1.90015,0.79785l-3.80029,3.78979c-1.0498,1.0603 -1.0498,2.75049 0,3.81079c0.5249,0.5144 1.20728,0.78735 1.90015,0.78735c0.69287,0 1.37524,-0.27295 1.90015,-0.78735l3.80029,-3.81079c1.0498,-1.0498 1.0498,-2.73999 0,-3.78979c-0.5249,-0.5354 -1.20728,-0.79785 -1.90015,-0.79785zM87.46973,70.45239c-0.69287,0 -1.37524,0.26245 -1.90015,0.77685l-7.60059,7.60059c-1.0603,1.0603 -1.0603,2.75049 0,3.81079c0.5144,0.5144 1.20728,0.78735 1.90015,0.78735c0.68237,0 1.37524,-0.27295 1.88965,-0.78735l7.60059,-7.60059c1.0603,-1.0603 1.0603,-2.75049 0,-3.81079c-0.5249,-0.5249 -1.20728,-0.78735 -1.88965,-0.77685zM17.7627,125.7876l14.20386,2.83447l1.54321,7.75806c0.22046,1.0603 1.0498,1.88965 2.11011,2.09961l7.74756,1.55371l2.86597,14.34033l-20.4502,1.50122l-9.6582,-9.64771z"></path></g></g></svg>
+					<b>
+						<svg @click.prevent="deletedepartment(item._id)" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="64" viewBox="0 0 172 172" style="fill: rgb(0, 0, 0);width: 30px;cursor: pointer;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ff1800"><path d="M72.39453,10.75c-2.40263,0 -4.65928,1.05908 -6.19385,2.90271c-0.15587,0.18544 -0.28374,0.3912 -0.38318,0.60889l-5.73193,12.6134h-30.52307c-4.44513,0 -8.0625,3.61737 -8.0625,8.0625v16.125c0,4.44512 3.61737,8.0625 8.0625,8.0625h5.375v94.0625c0,4.44513 3.61738,8.0625 8.0625,8.0625h86c4.44513,0 8.0625,-3.61737 8.0625,-8.0625v-94.0625h5.375c4.44513,0 8.0625,-3.61738 8.0625,-8.0625v-16.125c0,-4.44513 -3.61737,-8.0625 -8.0625,-8.0625h-30.51782l-5.73193,-12.6134c-0.09944,-0.21769 -0.22999,-0.42614 -0.38318,-0.60889c-1.53725,-1.84363 -3.79391,-2.90271 -6.19385,-2.90271zM72.39453,16.125h27.21094c0.69875,0 1.36365,0.26967 1.85815,0.74536l4.55091,10.00464h-40.02905l4.55091,-10.00464c0.49719,-0.47569 1.1594,-0.74536 1.85815,-0.74536zM29.5625,32.25h112.875c1.48081,0 2.6875,1.204 2.6875,2.6875v16.125c0,1.4835 -1.20669,2.6875 -2.6875,2.6875h-112.875c-1.48081,0 -2.6875,-1.204 -2.6875,-2.6875v-16.125c0,-1.4835 1.20669,-2.6875 2.6875,-2.6875zM37.625,37.625c-1.4835,0 -2.6875,1.20131 -2.6875,2.6875v5.375c0,1.48619 1.204,2.6875 2.6875,2.6875c1.4835,0 2.6875,-1.20131 2.6875,-2.6875v-5.375c0,-1.48619 -1.204,-2.6875 -2.6875,-2.6875zM51.0625,37.625c-1.4835,0 -2.6875,1.20131 -2.6875,2.6875v5.375c0,1.48619 1.204,2.6875 2.6875,2.6875c1.4835,0 2.6875,-1.20131 2.6875,-2.6875v-5.375c0,-1.48619 -1.204,-2.6875 -2.6875,-2.6875zM64.5,37.625c-1.4835,0 -2.6875,1.20131 -2.6875,2.6875v5.375c0,1.48619 1.204,2.6875 2.6875,2.6875c1.4835,0 2.6875,-1.20131 2.6875,-2.6875v-5.375c0,-1.48619 -1.204,-2.6875 -2.6875,-2.6875zM77.9375,37.625c-1.4835,0 -2.6875,1.20131 -2.6875,2.6875v5.375c0,1.48619 1.204,2.6875 2.6875,2.6875c1.4835,0 2.6875,-1.20131 2.6875,-2.6875v-5.375c0,-1.48619 -1.204,-2.6875 -2.6875,-2.6875zM94.0625,37.625c-1.4835,0 -2.6875,1.20131 -2.6875,2.6875v5.375c0,1.48619 1.204,2.6875 2.6875,2.6875c1.4835,0 2.6875,-1.20131 2.6875,-2.6875v-5.375c0,-1.48619 -1.204,-2.6875 -2.6875,-2.6875zM107.5,37.625c-1.4835,0 -2.6875,1.20131 -2.6875,2.6875v5.375c0,1.48619 1.204,2.6875 2.6875,2.6875c1.4835,0 2.6875,-1.20131 2.6875,-2.6875v-5.375c0,-1.48619 -1.204,-2.6875 -2.6875,-2.6875zM120.9375,37.625c-1.4835,0 -2.6875,1.20131 -2.6875,2.6875v5.375c0,1.48619 1.204,2.6875 2.6875,2.6875c1.4835,0 2.6875,-1.20131 2.6875,-2.6875v-5.375c0,-1.48619 -1.204,-2.6875 -2.6875,-2.6875zM134.375,37.625c-1.4835,0 -2.6875,1.20131 -2.6875,2.6875v5.375c0,1.48619 1.204,2.6875 2.6875,2.6875c1.4835,0 2.6875,-1.20131 2.6875,-2.6875v-5.375c0,-1.48619 -1.204,-2.6875 -2.6875,-2.6875zM40.3125,59.125h91.375v94.0625c0,1.4835 -1.20669,2.6875 -2.6875,2.6875h-86c-1.48081,0 -2.6875,-1.204 -2.6875,-2.6875v-2.6875h61.8125c1.4835,0 2.6875,-1.20131 2.6875,-2.6875c0,-1.48619 -1.204,-2.6875 -2.6875,-2.6875h-61.8125zM53.75,75.25c-1.4835,0 -2.6875,1.20131 -2.6875,2.6875v32.25c0,1.48619 1.204,2.6875 2.6875,2.6875c1.4835,0 2.6875,-1.20131 2.6875,-2.6875v-32.25c0,-1.48619 -1.204,-2.6875 -2.6875,-2.6875zM75.25,75.25c-1.4835,0 -2.6875,1.20131 -2.6875,2.6875v53.75c0,1.48619 1.204,2.6875 2.6875,2.6875c1.4835,0 2.6875,-1.20131 2.6875,-2.6875v-53.75c0,-1.48619 -1.204,-2.6875 -2.6875,-2.6875zM96.75,75.25c-1.4835,0 -2.6875,1.20131 -2.6875,2.6875v53.75c0,1.48619 1.204,2.6875 2.6875,2.6875c1.4835,0 2.6875,-1.20131 2.6875,-2.6875v-53.75c0,-1.48619 -1.204,-2.6875 -2.6875,-2.6875zM118.25,75.25c-1.4835,0 -2.6875,1.20131 -2.6875,2.6875v10.75c0,1.48619 1.204,2.6875 2.6875,2.6875c1.4835,0 2.6875,-1.20131 2.6875,-2.6875v-10.75c0,-1.48619 -1.204,-2.6875 -2.6875,-2.6875zM118.25,96.75c-1.4835,0 -2.6875,1.20131 -2.6875,2.6875v32.25c0,1.48619 1.204,2.6875 2.6875,2.6875c1.4835,0 2.6875,-1.20131 2.6875,-2.6875v-32.25c0,-1.48619 -1.204,-2.6875 -2.6875,-2.6875zM53.75,118.25c-1.4835,0 -2.6875,1.20131 -2.6875,2.6875v10.75c0,1.48619 1.204,2.6875 2.6875,2.6875c1.4835,0 2.6875,-1.20131 2.6875,-2.6875v-10.75c0,-1.48619 -1.204,-2.6875 -2.6875,-2.6875zM112.875,145.125c-1.4835,0 -2.6875,1.20131 -2.6875,2.6875c0,1.48619 1.204,2.6875 2.6875,2.6875h10.75c1.4835,0 2.6875,-1.20131 2.6875,-2.6875c0,-1.48619 -1.204,-2.6875 -2.6875,-2.6875z"></path></g></g></svg>
+					</b>
+                  </li>                
+                </ul>
+              </div>             
             </div>
           </div>
         </div>
@@ -94,14 +55,21 @@ import axios from "axios";
 export default {
   data() {
     return {
+      baseUrl:"http://localhost:5000/bibtel/api",
       department: {
         name: ""
       },
       departments: []
     };
   },
-  created() {
-    let apiURL = "http://localhost:5000/bibtel/api/get_all_department";
+  mounted(){
+    this.getDeparments();
+  },
+  created() {   
+  },
+  methods: {
+    getDeparments(){
+      let apiURL = `${this.baseUrl}/get_all_department`;
     axios
       .get(apiURL)
       .then(result => {
@@ -113,10 +81,9 @@ export default {
       .catch(error => {
         console.log(error);
       });
-  },
-  methods: {
+    },
     handleSubmitForm() {
-      let apiURL = "http://localhost:5000/bibtel/api/create_department";
+      let apiURL = `${this.baseUrl}/create_department`;
       console.log("hello");
       axios
         .post(apiURL, this.department)
@@ -125,13 +92,17 @@ export default {
           this.department = {
             name: ""
           };
+
+          // load deparments
+          this.getDeparments();
         })
         .catch(error => {
           console.log(error);
         });
     },
     deletedepartment(id) {
-      let apiURL = `http://localhost:5000/bibtel/api/delete_department/${id}`;
+      alert(id);
+      let apiURL = `${this.baseUrl}/delete_department/${id}`;
       let indexOfArrayItem = this.departments.findIndex(i => i._id === id);
 
       if (window.confirm("Do you really want to delete?")) {
@@ -148,5 +119,9 @@ export default {
   }
 };
 </script>
+<<<<<<< HEAD
 <style>
 </style>
+=======
+<style lang="stylus" scoped></style>
+>>>>>>> 51b10919311caef85c00177dd773270396b9def9

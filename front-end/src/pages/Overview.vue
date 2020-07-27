@@ -10,7 +10,7 @@
             elevation="5"
           >
             <img :src="item.image" style="width:300px;" />
-            <div class="container">
+            <div class="container" style="margin-top: 20px;margin-right: 90px;">
               <h3>
                 <b style="margin-left: 86px;">{{ item.text }}</b>
               </h3>

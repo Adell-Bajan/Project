@@ -5,7 +5,7 @@
        :data-image="backgroundImage">
     <div class="sidebar-wrapper" style="background-color: #412959;">
       <div class="logo">
-        <a href="#" class="simple-text logo__container">
+        <a href="#" class="simple-text logo__container" style="margin-right: 60px;">
             <img src="../../assets/img/final-bb.png" style="width: 80px; margin-left:60px;">
         </a>
       </div>

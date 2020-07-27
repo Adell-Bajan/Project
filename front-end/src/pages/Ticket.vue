@@ -57,28 +57,26 @@
 		                            <li class="ticket-item" style="width: 1160px;margin-left: -13px;border-radius: 10px;margin-top: -1px;height: 49px;">
 		                                <div class="row">
 											<b>
-												<span style="position: absolute;margin-left: 1041px;margin-top: 10px;">#</span>
-												<span style="position: absolute;margin-left: 900px;margin-top: 10px;width: 100px; color:#64abde;">ایجاد شده توسط</span>
-												<span style="position: absolute;margin-left: 800px;margin-top: 10px;width: 100px;">بخش</span>
-												<span style="position: absolute;margin-left: 600px;margin-top: 10px;width: 100px;">توضیحات</span>
-												<span style="position: absolute;margin-left: 350px;margin-top: 10px;width: 100px;">تاریخ</span>
-												<span style="position: absolute;margin-left: 190px;margin-top: 10px;width: 100px;color:#64abde;">مسٰول</span>
-												<span style="position: absolute;margin-left: 70px;margin-top: 10px;width: 100px;">وضعیت</span>
+												<span style="position: absolute;margin-right: 19px;margin-top: 10px;">#</span>
+												<span style="position: absolute;margin-right: 90px;margin-top: 10px;width: 110px;color: rgb(0, 0, 0);">ایجاد شده توسط</span>
+												<span style="position: absolute;margin-right: 260px;margin-top: 10px;width: 100px;">بخش</span>
+												<span style="position: absolute;margin-right: 420px;margin-top: 10px;width: 100px">توضیحات</span>
+												<span style="position: absolute;margin-right: 790px;margin-top: 10px;width: 100px;">تاریخ</span>
+												<span style="margin-right: 910px;position: absolute;margin-top: 10px;width: 100px;color: rgb(0, 0, 0);">مسٰول</span>
+												<span style="position: absolute;margin-top: 10px;width: 100px;margin-right: 1040px;">وضعیت</span>
 										   </b>
 		                                </div>
 		                            </li>
-									<li class="ticket-item" v-for="item in tickets" :key="item._id" style="width: 1055px;margin-left: -13px;border-radius: 10px;margin-top: 7px;width: 1070px;background-color: whit;height: 49px;x;">
+									<li class="ticket-item" v-for="item in tickets" :key="item._id" style="width: 1160px;margin-left: -13px;border-radius: 10px;margin-top: -1px;height: 49px;">
 		                                <div class="row">
 											<b>
-												<span style="position: absolute;margin-left: 1041px;margin-top: 10px;">{{item.code}}</span>
-												<span style="position: absolute;margin-left: 900px;margin-top: 10px;width: 100px; color:#64abde;" v-if="item.user_id">{{item.user_id.name}}</span>
-												<span style="position: absolute;margin-left: 800px;margin-top: 10px;width: 100px;">Title</span>
-												<span style="position: absolute;margin-left: 510px;margin-top: 10px;width: 250px;">{{item.question}}</span>
-												<span style="position: absolute;margin-left: 350px;margin-top: 10px;width: 100px;" v-if="item.fulltime.length">{{item.fulltime[0].date}}</span>
-												<span style="position: absolute;margin-left: 190px;margin-top: 10px;width: 100px;color:#64abde;">Operator</span>
-												<span style="position: absolute;margin-left: 18px;margin-top: 9px;width: 200px;">
-													<a href="#" class="myButton">Create</a>
-												</span>
+												<span style="position: absolute;margin-right: 19px;margin-top: 10px;">{{item.code}}</span>
+												<span style="position: absolute;margin-right: 90px;margin-top: 10px;width: 110px;color:lightblue" v-if="item.user_id">{{item.user_id.name}}</span>
+												<span style="position: absolute;margin-right: 260px;margin-top: 10px;width: 100px;">مالی</span>
+												<span style="position: absolute;margin-right: 420px;margin-top: 10px;">{{item.question}}</span>
+												<span style="position: absolute;margin-right: 765px;margin-top: 10px;width: 100px;" v-if="item.fulltime.length">{{item.fulltime[0].date}}</span>
+												<span style="margin-right: 910px;position: absolute;margin-top: 10px;width: 100px;color: lightblue;">مسٰول</span>
+												<button style="position: absolute;margin-top: 10px;width: 100px;color: white;background-color: #ff8100;border-color: #ff8100;font-size: 10px;margin-right: 1040px;" class="btn btn-warning"><b>در انتظار پاسخ</b></button>
 										   </b>
 		                                </div>
 		                            </li>

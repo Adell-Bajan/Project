@@ -1,41 +1,39 @@
-const express = require('express');
+const express = require("express");
 const app = express.Router();
-var cors = require('cors')
+var cors = require("cors");
 
-
-const ticket = require('../controller/ticket.controller');
+const ticket = require("../controller/ticket.controller");
 
 // module.exports = async(req,res)=>{
-    // Create a new Ticket
-	 app.post('/create_ticket', ticket.create);
-	
-	// my tickets
-	app.post('/my_tickets/', ticket.findUserTicket);
+// Create a new Ticket
+app.post("/create_ticket", ticket.create);
 
-	// Answer Ticket
-	app.post('/answer_ticket', ticket.answerTicket);
+// my tickets
+app.post("/my_tickets/", ticket.findUserTicket);
 
-	// get chats
-	app.get('/ticket', ticket.getTicket);
+// Answer Ticket
+app.post("/answer_ticket", ticket.answerTicket);
 
-	// read ticket message 
-	app.post('/read_ticket_message',ticket.readMessage);
+// get chats
+app.get("/ticket", ticket.getTicket);
 
-	// get all tickets 
-	app.get('/get_all_tickets',ticket.getAllTickets);
+// read ticket message
+app.post("/read_ticket_message", ticket.readMessage);
 
-	// create Department
-	app.post('/create_department', ticket.create_department);
+// get all tickets
+app.get("/get_all_tickets", ticket.getAllTickets);
 
-	// get all department
-	app.get('/get_all_department',ticket.getAllDepartment)
+// create Department
+app.post("/create_department", ticket.create_department);
 
-	// edit departement
-	app.get('/edit_department/:id',ticket.getEditDepartment);
+// get all department
+app.get("/get_all_department", ticket.getAllDepartment);
 
-	// delete department
-	app.get('/delete_department/:id',ticket.deleteDepartment);
-	// }
+// edit departement
+app.get("/edit_department/:id", ticket.getEditDepartment);
 
+// delete department
+app.delete("/delete_department/:id", ticket.deleteDepartment);
+// }
 
 module.exports = app;

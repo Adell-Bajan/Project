@@ -6,12 +6,13 @@ import NotFound from '../pages/NotFoundPage.vue'
 import Overview from 'src/pages/Overview.vue'
 import Ticket from 'src/pages/Ticket.vue'
 import Department from 'src/pages/Department.vue'
+import Login from 'src/pages/Login.vue'
 
 const routes = [
   {
     path: '/',
     component: DashboardLayout,
-    redirect: '/admin/overview'
+    redirect: '/'
   },
   {
     path: '/admin',
@@ -32,7 +33,12 @@ const routes = [
         path: 'ticket',
         name: 'Ticket',
         component: Ticket
-      }
+	  },
+	  {
+		path: 'login',
+		name: 'Login',
+		component: Login,
+	  },
     ]
   },
   { path: '*', component: NotFound }

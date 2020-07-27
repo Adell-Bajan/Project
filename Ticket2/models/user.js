@@ -12,7 +12,11 @@ const UserSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    },
+	},
+	mobile:{
+		type:Number,
+		required:true
+	}
 });
 
 const User = mongoose.model('User', UserSchema);
