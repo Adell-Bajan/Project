@@ -31,7 +31,12 @@ exports.create = (req, res) => {
 			code: lastTicket.code + 1,
 			user_id: req.body.user,
 			op_unreads: 1,
-			date : new Date().getTime()
+			fulltime: [
+				{
+				  date: PersianDate.fullDate(),
+				  time: PersianDate.fullTime(),
+				},
+			  ],
 		});
 		// Save Ticket in the database
 		ticket.save()

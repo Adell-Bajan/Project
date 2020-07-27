@@ -12,17 +12,17 @@
 		                <div class="widget-main no-padding">
 		                    <div class="tickets-container" style="margin-top: 0px;width: 1095px;margin-left: -16px;">
 								<h3>
-									<b style="margin-left: 915px;position: absolute;margin-top: -20px;">List Ticket</b>
+									<b style="margin-left: 915px;position: absolute;margin-top: -20px;">لیست تیکت ها</b>
 								</h3>
 								<h6>
-									<b style="margin-left: 914px;position: absolute;margin-top: 20px;font-size: 10px;color: #57c0d8;">List Ticket / List Ticket</b>
+									<b style="margin-left: 914px;position: absolute;margin-top: 20px;font-size: 10px;color: #57c0d8;">لیست تیکت / لیست تیکت</b>
 								</h6>
 		                        <ul class="tickets-list"> 
 		                            <li class="ticket-item" style="width: 258px;height: 99px;direction: rtl;margin-left: 797px;margin-top: 78px;border-radius: 8px;">
 		                                <div class="row">
 		                                    <div class="ticket-time  col-md-4 col-sm-6 col-xs-12">
 		                                        <span class="time" style="font-size: 27px;position: absolute;margin-right: 10px;margin-top: 5px;">{{tickets.length}}</span>
-		                                        <span class="time" style="position: absolute;width: 90px;font-size: 21px;margin-right: 10px;margin-top: 43px;">jam ticket</span>
+		                                        <span class="time" style="position: absolute;width: 90px;font-size: 21px;margin-right: 10px;margin-top: 43p‍‍‍‍‍‍‍‍‍‍‍x;">مجموعه تیکت ها</span>
 												<img src="../assets/img/TICKET HA.png" style="width: 85px;margin-right: 161px;margin-top: -6px;">
 		                                    </div>
 		                                </div>
@@ -31,7 +31,7 @@
 		                                <div class="row">
 		                                    <div class="ticket-time  col-md-4 col-sm-6 col-xs-12">
 		                                        <span class="time" style="font-size: 27px;position: absolute;margin-right: 10px;margin-top: 5px;">0</span>
-		                                        <span class="time" style="position: absolute;width: 90px;font-size: 21px;margin-right: 10px;margin-top: 43px;">dr entzr</span>
+		                                        <span class="time" style="position: absolute;width: 90px;font-size: 21px;margin-right: 10px;margin-top: 43px;">در انتظار</span>
 												<img src="../assets/img/narenji.png" style="width: 85px;margin-right: 161px;margin-top: -6px;">
 		                                    </div>
 		                                </div>
@@ -40,7 +40,7 @@
 		                                <div class="row">
 		                                    <div class="ticket-time  col-md-4 col-sm-6 col-xs-12">
 		                                        <span class="time" style="font-size: 27px;position: absolute;margin-right: 10px;margin-top: 5px;">0</span>
-		                                        <span class="time" style="position: absolute;width: 90px;font-size: 21px;margin-right: 10px;margin-top: 43px;">dr entzr</span>
+		                                        <span class="time" style="position: absolute;width: 90px;font-size: 21px;margin-right: 10px;margin-top: 43px;">پاسخ داده شده</span>
 												<img src="../assets/img/sabz.png" style="width: 85px;margin-right: 161px;margin-top: -6px;">
 		                                    </div>
 		                                </div>
@@ -49,7 +49,7 @@
 		                                <div class="row">
 		                                    <div class="ticket-time  col-md-4 col-sm-6 col-xs-12">
 		                                        <span class="time" style="font-size: 27px;position: absolute;margin-right: 10px;margin-top: 5px;">0</span>
-		                                        <span class="time" style="position: absolute;width: 90px;font-size: 21px;margin-right: 10px;margin-top: 43px;">brtart</span>
+		                                        <span class="time" style="position: absolute;width: 90px;font-size: 21px;margin-right: 10px;margin-top: 43px;">برطرف شده</span>
 												<img src="../assets/img/abi.png" style="width: 85px;margin-right: 161px;margin-top: -6px;">
 		                                    </div>
 		                                </div>
@@ -74,9 +74,11 @@
 												<span style="position: absolute;margin-left: 900px;margin-top: 10px;width: 100px; color:#64abde;" v-if="item.user_id">{{item.user_id.name}}</span>
 												<span style="position: absolute;margin-left: 800px;margin-top: 10px;width: 100px;">Title</span>
 												<span style="position: absolute;margin-left: 510px;margin-top: 10px;width: 250px;">{{item.question}}</span>
-												<span style="position: absolute;margin-left: 350px;margin-top: 10px;width: 100px;">{{item.date}}</span>
+												<span style="position: absolute;margin-left: 350px;margin-top: 10px;width: 100px;" v-if="item.fulltime.length">{{item.fulltime[0].date}}</span>
 												<span style="position: absolute;margin-left: 190px;margin-top: 10px;width: 100px;color:#64abde;">Operator</span>
-												<span style="position: absolute;margin-left: 18px;margin-top: 10px;width: 200px;"><button style="margin-top: -8px;" class="btn btn-success">Create new ticket</button></span>
+												<span style="position: absolute;margin-left: 18px;margin-top: 9px;width: 200px;">
+													<a href="#" class="myButton">Create</a>
+												</span>
 										   </b>
 		                                </div>
 		                            </li>
@@ -116,6 +118,29 @@ export default {
 };
 </script>
 <style>
+.myButton {
+	box-shadow:inset 50px 21px 50px 50px #ff8c00;
+	background:linear-gradient(to bottom, #ff8c00 5%, #ff8c00 100%);
+	background-color:#ff8c00;
+	border-radius:6px;
+	border:1px solid #ff8c00;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:1px 44px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #ff8c00;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #ff8c00 5%, #ff8c00 100%);
+	background-color:#ff8c00;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
 .tickets-container .tickets-list .ticket-item .ticket-state i {
     font-size: 13px;
     color: #fff;

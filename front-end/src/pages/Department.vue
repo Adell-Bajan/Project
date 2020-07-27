@@ -23,23 +23,23 @@
                         <h3>
                           <b
                             style="margin-left: 915px;position: absolute;margin-top: -20px;"
-                          >List Ticket</b>
+                          >دپارتمان ها</b>
                         </h3>
                         <h6>
                           <b
-                            style="margin-left: 914px;position: absolute;margin-top: 20px;font-size: 10px;color: #57c0d8;"
-                          >List Ticket / List Ticket</b>
+                            style="margin-left: 939px;position: absolute;margin-top: 20px;font-size: 11px;color: rgb(87, 192, 216);"
+                          >دپارتمان / دپارتمان</b>
                         </h6>
                         <ul class="tickets-list">
-                          <div class="panel panel-info" style="border-color: #a45fe8;margin-top: 85px;">
+                          <div class="panel panel-info" style="width: 570px;margin-left: 470px;border-color: rgb(255, 255, 255);margin-top: 85px;border-radius: 13px;">
                             <div
                               class="panel-heading"
-                              style="background-color: #412959;border-color: #412959;"
+                              style="background-color: #297ce7;border-color: #297ce7;border-radius: 11px 11px 0px 0px;height: 55px;text-align: right;"
                             >
-                              <div class="panel-title" style="color: white;">Department</div>
+                              <div class="panel-title" style="color: white;">افزودن دپارتمان جدید</div>
                             </div>
 
-                            <div style="padding-top:30px" class="panel-body">
+                            <div style="padding-top:30px;height: 95px;" class="panel-body">
                               <div
                                 style="display:none"
                                 id="login-alert"
@@ -51,31 +51,32 @@
                                 class="form-horizontal"
                                 @submit.prevent="handleSubmitForm"
                               >
-                                <div style="margin-bottom: 25px" class="input-group">
-                                  <span class="input-group-addon">
-                                    <i class="glyphicon glyphicon-user"></i>
-                                  </span>
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    v-model="department.name"
-                                    required
-                                    placeholder="Please Enter Department"
-                                  />
-                                </div>
-
+							  <b>
+								  <input class="form-control" type="text" v-model="department.name" placeholder="... لطفا دپارتمان مورد نظر خود را وارد نمایید" required style="margin-left: 186px;font-size: 13px;text-align: center;width: 337px;border-radius: 11px;height: 43px;margin-bottom: 10px;box-shadow: none;margin-top: -6px;border-color: #eee;background-color: #eee;">
                                 <div style="margin-top:10px" class="form-group">
                                   <div class="col-sm-12 controls">
                                     <button
                                       class="btn btn-info"
-                                      style="color:#fff;background-color:rgb(65, 41, 89);border-color:rgb(65, 41, 89);"
-                                    >Add Department</button>
+                                      style="font-size: 18px;color: rgb(255, 255, 255);margin-left: 20px;background-color: rgb(63, 225, 108);border-color: rgb(30, 185, 73);width: 139px;height: 40px;margin-top: -86px;border: 2px solid #50c98c;border-radius: 13px;"
+                                    >ثبت دپارتمان</button>
                                   </div>
                                 </div>
+								</b>
                               </form>
                             </div>
                           </div>
                         </ul>
+						<div style="width: 566px;border: 0px solid black;height: 40px;background-color: white;margin-left: 472px;border-radius: 9px;margin-top: -8px;">
+							<div><b style="position: absolute;margin-left: 465px;margin-top: 9px;">Name Depar</b></div>
+							<div><b style="position: absolute;margin-left: 265px;margin-top: 9px;">Edit Depar</b></div>
+							<div><b style="position: absolute;margin-left: 46px;margin-top: 9px;">Remove Depar</b></div>
+						</div>
+						<div  v-for="item in departments" :key="item._id" style="width: 566px;border: 0px solid black;height: 40px;background-color: white;margin-left: 472px;border-radius: 9px;margin-top: 5px;">
+							<div><b style="position: absolute;margin-left: 465px;margin-top: 9px;color: lightblue;">{{item.name}}</b></div>
+							<!-- <div><b style="position: absolute;margin-left: 265px;margin-top: 9px;">Edit Depar</b></div> -->
+							<button  class="btn btn-defualt" style="position: absolute;margin-left: 265px;margin-top: 4px;"><b>Edit Depar</b></button>
+							<button @click.prevent="deletedepartment(item._id)" class="btn btn-danger" style="background-color: #ef2121;margin-left: 46px;position: absolute;margin-top: 2px;width: 75px;height: 35px;margin-top: 5px;">Remove</button>
+						</div>
                       </div>
                     </div>
                   </div>
@@ -83,38 +84,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div
-        id="loginbox"
-        style="margin-top:50px;"
-        class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2"
-      >
-        <div class="list-group">
-          <button
-            type="button"
-            style="background-color: #412959;border-color: #412959;"
-            class="list-group-item list-group-item-action active"
-          >List Department</button>
-          <b>
-            <span
-              style="text-align: right;"
-              type="button"
-              class="list-group-item list-group-item-action"
-              v-for="item in departments"
-              :key="item._id"
-            >
-              <span style="width: 1000px;height: 100px;">
-                {{item.name}}
-                <button
-                  @click.prevent="deletedepartment(item._id)"
-                  class="btn btn-danger"
-                  style="color: white;margin-left: -420px;position: absolute;margin-top: -6px;"
-                >Remove</button>
-              </span>
-            </span>
-          </b>
         </div>
       </div>
     </div>

@@ -22,9 +22,16 @@ const TicketSchema = mongoose.Schema({
 		type:Number,
 		default:0
 	}, 
-	date:{
-		type:Number
-	}
+	fulltime: [{
+        date: {
+            type: String,
+            required: true
+        },
+        time: {
+            type: String,
+            required: true
+        }
+    }],
 	
 });
 
