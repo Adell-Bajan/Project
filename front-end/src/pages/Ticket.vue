@@ -2,7 +2,7 @@
   <div class="container">
 
 	  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
-<div class="border-ticket1" style="border: 2px solid #eee;margin-top: 38px;padding: 0px; border-radius:10px;">
+<div class="border-ticket1">
 <div class="container bootstrap snippet" style="margin-left: -10px;">
     <div class="col-md-8 col-sm-12 col-xs-12">
     	<div class="row">
@@ -10,60 +10,60 @@
 		        <div class="widget-box">
 		            <div class="widget-body">
 		                <div class="widget-main no-padding">
-		                    <div class="tickets-container" style="margin-top: 0px;width: 1095px;margin-left: -16px;">
+		                    <div class="tickets-container" style="margin-top: 0px;width: 1214px;margin-right: -119px;">
 								<h3>
-									<b style="margin-left: 915px;position: absolute;margin-top: -20px;">لیست تیکت ها</b>
+									<b style="margin-left: 915px;position: absolute;margin-top: 4px;">لیست تیکت</b>
 								</h3>
 								<h6>
-									<b style="margin-left: 914px;position: absolute;margin-top: 20px;font-size: 10px;color: #57c0d8;">لیست تیکت / لیست تیکت</b>
+									<b style="margin-right: 3px;position: absolute;margin-top: 20px;font-size: 10px;color: rgb(87, 192, 216);margin-top: 36px;">لیست تیکت / لیست تیکت</b>
 								</h6>
 		                        <ul class="tickets-list"> 
 		                            <li class="ticket-item" style="width: 258px;height: 99px;direction: rtl;margin-left: 797px;margin-top: 78px;border-radius: 8px;">
 		                                <div class="row">
 		                                    <div class="ticket-time  col-md-4 col-sm-6 col-xs-12">
-		                                        <span class="time" style="font-size: 27px;position: absolute;margin-right: 10px;margin-top: 5px;">{{tickets.length}}</span>
-		                                        <span class="time" style="position: absolute;width: 90px;font-size: 21px;margin-right: 10px;margin-top: 43p‍‍‍‍‍‍‍‍‍‍‍x;">مجموعه تیکت ها</span>
-												<img src="../assets/img/TICKET HA.png" style="width: 85px;margin-right: 161px;margin-top: -6px;">
+												<span class="time" style="font-size: 27px;position: absolute;margin-right: 10px;margin-top: 5px;">{{tickets.length}}</span>
+		                                        <span class="time" style="position: absolute;width: 113px;font-size: 16px;margin-right: 10px;margin-top: 43px;">مجموعه تیکت ها</span>
+												<img src="../assets/img/TICKET HA.png" style="width: 113px;margin-right: 140px;margin-top: -22px;">
 		                                    </div>
 		                                </div>
 		                            </li>
-									<li class="ticket-item" style="width: 258px;height: 99px;direction: rtl;margin-left: 525px;margin-top: 66px;margin-top: -106px;border-radius: 8px;margin-bottom: 25px;">
+									<li class="ticket-item" style="width: 258px;height: 99px;direction: rtl;margin-right: 303px;margin-top: -106px;border-radius: 8px;margin-bottom: 25px;">
 		                                <div class="row">
 		                                    <div class="ticket-time  col-md-4 col-sm-6 col-xs-12">
-		                                        <span class="time" style="font-size: 27px;position: absolute;margin-right: 10px;margin-top: 5px;">0</span>
-		                                        <span class="time" style="position: absolute;width: 90px;font-size: 21px;margin-right: 10px;margin-top: 43px;">در انتظار</span>
-												<img src="../assets/img/narenji.png" style="width: 85px;margin-right: 161px;margin-top: -6px;">
+		                                        <span class="time" style="font-size: 27px;position: absolute;margin-right: 10px;margin-top: 5px;">۵۰</span>
+		                                        <span class="time" style="position: absolute;width: 100px;font-size: 16px;margin-right: 10px;margin-top: 43px;">در انتظار پاسخ</span>
+												<img src="../assets/img/narenji.png" style="width: 73px;margin-right: 161px;margin-top: 1px;">
 		                                    </div>
 		                                </div>
 		                            </li>
-									<li class="ticket-item" style="width: 258px;height: 99px;direction: rtl;margin-left: 255px;margin-top: -122px;border-radius: 8px;margin-bottom: 25px;">
+									<li class="ticket-item" style="width: 258px;height: 99px;margin-right: 605px;direction: rtl;margin-top: -122px;border-radius: 8px;margin-bottom: 25px;">
 		                                <div class="row">
 		                                    <div class="ticket-time  col-md-4 col-sm-6 col-xs-12">
-		                                        <span class="time" style="font-size: 27px;position: absolute;margin-right: 10px;margin-top: 5px;">0</span>
-		                                        <span class="time" style="position: absolute;width: 90px;font-size: 21px;margin-right: 10px;margin-top: 43px;">پاسخ داده شده</span>
-												<img src="../assets/img/sabz.png" style="width: 85px;margin-right: 161px;margin-top: -6px;">
+		                                        <span class="time" style="font-size: 27px;position: absolute;margin-right: 10px;margin-top: 5px;">۵۰</span>
+		                                        <span class="time" style="position: absolute;width: 100px;font-size: 16px;margin-right: 10px;margin-top: 43px;">پاسخ داده شده</span>
+												<img src="../assets/img/sabz.png" style="width: 73px;margin-right: 161px;margin-top: 1px;">
 		                                    </div>
 		                                </div>
 		                            </li>
-									<li class="ticket-item" style="width: 258px;height: 99px;direction: rtl;margin-left: -15px;margin-top: -122px;border-radius: 8px;margin-bottom: 25px;">
+									<li class="ticket-item" style="margin-top: -122px;width: 258px;height: 99px;direction: rtl;margin-right: 903px;border-radius: 8px;margin-bottom: 25px;">
 		                                <div class="row">
 		                                    <div class="ticket-time  col-md-4 col-sm-6 col-xs-12">
-		                                        <span class="time" style="font-size: 27px;position: absolute;margin-right: 10px;margin-top: 5px;">0</span>
-		                                        <span class="time" style="position: absolute;width: 90px;font-size: 21px;margin-right: 10px;margin-top: 43px;">برطرف شده</span>
-												<img src="../assets/img/abi.png" style="width: 85px;margin-right: 161px;margin-top: -6px;">
+		                                        <span class="time" style="font-size: 27px;position: absolute;margin-right: 25px;margin-top: 10px;">۲,۰۵۰</span>
+		                                        <span class="time" style="position: absolute;width: 90px;font-size: 17px;margin-right: 26px;margin-top: 43px;">برطرف شده</span>
+												<img src="../assets/img/abi.png" style="width: 73px;margin-right: 161px;margin-top: 1px;">
 		                                    </div>
 		                                </div>
 		                            </li>
-		                            <li class="ticket-item" style="width: 1055px;margin-left: -13px;border-radius: 10px;margin-top: -14px;width: 1070px;background-color: whit;height: 49px;x;">
+		                            <li class="ticket-item" style="width: 1160px;margin-left: -13px;border-radius: 10px;margin-top: -1px;height: 49px;">
 		                                <div class="row">
 											<b>
 												<span style="position: absolute;margin-left: 1041px;margin-top: 10px;">#</span>
-												<span style="position: absolute;margin-left: 900px;margin-top: 10px;width: 100px; color:#64abde;">Create Adell</span>
-												<span style="position: absolute;margin-left: 800px;margin-top: 10px;width: 100px;">Title</span>
-												<span style="position: absolute;margin-left: 600px;margin-top: 10px;width: 100px;">Description</span>
-												<span style="position: absolute;margin-left: 350px;margin-top: 10px;width: 100px;">Date</span>
-												<span style="position: absolute;margin-left: 190px;margin-top: 10px;width: 100px;color:#64abde;">Massol</span>
-												<span style="position: absolute;margin-left: 70px;margin-top: 10px;width: 100px;">Status</span>
+												<span style="position: absolute;margin-left: 900px;margin-top: 10px;width: 100px; color:#64abde;">ایجاد شده توسط</span>
+												<span style="position: absolute;margin-left: 800px;margin-top: 10px;width: 100px;">بخش</span>
+												<span style="position: absolute;margin-left: 600px;margin-top: 10px;width: 100px;">توضیحات</span>
+												<span style="position: absolute;margin-left: 350px;margin-top: 10px;width: 100px;">تاریخ</span>
+												<span style="position: absolute;margin-left: 190px;margin-top: 10px;width: 100px;color:#64abde;">مسٰول</span>
+												<span style="position: absolute;margin-left: 70px;margin-top: 10px;width: 100px;">وضعیت</span>
 										   </b>
 		                                </div>
 		                            </li>
@@ -118,6 +118,15 @@ export default {
 };
 </script>
 <style>
+.border-ticket1 {  
+	border:2px solid rgb(218, 214, 214);
+	margin-top: 38px;
+	padding: 0px;
+	border-radius: 10px;
+	width: 1225px;
+	margin-right: -61px;
+	position: absolute;
+}
 .myButton {
 	box-shadow:inset 50px 21px 50px 50px #ff8c00;
 	background:linear-gradient(to bottom, #ff8c00 5%, #ff8c00 100%);
