@@ -7,6 +7,9 @@ import Overview from 'src/pages/Overview.vue'
 import Ticket from 'src/pages/Ticket.vue'
 import Department from 'src/pages/Department.vue'
 import Login from 'src/pages/Login.vue'
+import Register from 'src/pages/Register.vue'  
+import Users from 'src/pages/Users.vue'
+import Favorites from 'src/pages/Favorites.vue'
 
 const routes = [
   {
@@ -38,6 +41,21 @@ const routes = [
 		path: 'login',
 		name: 'Login',
 		component: Login,
+	  },
+	  {
+		path: 'register',
+		name: 'Register',
+		component: Register,
+	  },
+	  {
+		path: 'users',
+		name: 'Users',
+		component: Users,
+	  },
+	  {
+		path: 'favorites',
+		name: 'Favorites',
+		component: Favorites,
 	  },
     ]
   },

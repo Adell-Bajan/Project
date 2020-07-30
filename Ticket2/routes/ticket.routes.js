@@ -32,6 +32,11 @@ app.get("/get_all_department", ticket.getAllDepartment);
 // edit departement
 app.get("/edit_department/:id", ticket.getEditDepartment);
 
+
+// update department
+app.post("/update_department/:id",ticket.updateDepartment)
+
+
 // delete department
 app.delete("/delete_department/:id", ticket.deleteDepartment);
 // }

@@ -21,7 +21,7 @@
 		                            <li class="ticket-item" style="width: 258px;height: 99px;direction: rtl;margin-left: 797px;margin-top: 78px;border-radius: 8px;">
 		                                <div class="row">
 		                                    <div class="ticket-time  col-md-4 col-sm-6 col-xs-12">
-												<span class="time" style="font-size: 27px;position: absolute;margin-right: 10px;margin-top: 5px;">{{tickets.length}}</span>
+												<span class="time" style="font-size: 25px;position: absolute;margin-right: 10px;margin-top: 5px;"><b>{{tickets.length}}</b></span>
 		                                        <span class="time" style="position: absolute;width: 113px;font-size: 16px;margin-right: 10px;margin-top: 43px;">مجموعه تیکت ها</span>
 												<img src="../assets/img/TICKET HA.png" style="width: 113px;margin-right: 140px;margin-top: -22px;">
 		                                    </div>
@@ -49,7 +49,7 @@
 		                                <div class="row">
 		                                    <div class="ticket-time  col-md-4 col-sm-6 col-xs-12">
 		                                        <span class="time" style="font-size: 27px;position: absolute;margin-right: 25px;margin-top: 10px;">۲,۰۵۰</span>
-		                                        <span class="time" style="position: absolute;width: 90px;font-size: 17px;margin-right: 26px;margin-top: 43px;">برطرف شده</span>
+		                                        <span class="time" style="position: absolute;width: 100px;font-size: 17px;margin-right: 26px;margin-top: 43px;">در حال بررسی</span>
 												<img src="../assets/img/abi.png" style="width: 73px;margin-right: 161px;margin-top: 1px;">
 		                                    </div>
 		                                </div>
@@ -69,15 +69,20 @@
 		                            </li>
 									<li class="ticket-item" v-for="item in tickets" :key="item._id" style="width: 1160px;margin-left: -13px;border-radius: 10px;margin-top: -1px;height: 49px;">
 		                                <div class="row">
-											<b>
-												<span style="position: absolute;margin-right: 19px;margin-top: 10px;">{{item.code}}</span>
-												<span style="position: absolute;margin-right: 90px;margin-top: 10px;width: 110px;color:lightblue" v-if="item.user_id">{{item.user_id.name}}</span>
-												<span style="position: absolute;margin-right: 260px;margin-top: 10px;width: 100px;">مالی</span>
-												<span style="position: absolute;margin-right: 420px;margin-top: 10px;">{{item.question}}</span>
-												<span style="position: absolute;margin-right: 765px;margin-top: 10px;width: 100px;" v-if="item.fulltime.length">{{item.fulltime[0].date}}</span>
-												<span style="margin-right: 910px;position: absolute;margin-top: 10px;width: 100px;color: lightblue;">مسٰول</span>
-												<button style="position: absolute;margin-top: 10px;width: 100px;color: white;background-color: #ff8100;border-color: #ff8100;font-size: 10px;margin-right: 1040px;" class="btn btn-warning"><b>در انتظار پاسخ</b></button>
-										   </b>
+											<a href="/assds" style="color:black">
+												<b>
+													<span style="position: absolute;margin-right: 19px;margin-top: 10px;">{{item.code}}</span>
+													<span style="position: absolute;margin-right: 90px;margin-top: 10px;width: 110px;color:lightblue" v-if="item.user_id">{{item.user_id.name}}</span>
+													<span style="position: absolute;margin-right: 260px;margin-top: 10px;width: 100px;">مالی</span>
+													<span style="position: absolute;margin-right: 420px;margin-top: 10px;">{{item.question}}</span>
+													<span style="position: absolute;margin-right: 765px;margin-top: 10px;width: 100px;" v-if="item.fulltime.length">{{item.fulltime[0].date}}</span>
+													<span style="margin-right: 910px;position: absolute;margin-top: 10px;width: 100px;color: lightblue;">اپراتور</span>
+													<button v-if="item.op_unreads > 0" style="position: absolute;margin-top: 10px;width: 100px;color: white;background-color: #ff8100;border-color: #ff8100;font-size: 10px;margin-right: 1040px;" class="btn btn-warning"><b>در انتظار پاسخ</b></button>										
+													<button v-if="item.op_unreads<1" style="position: absolute;margin-top: 10px;width: 100px;box-shadow: none;color: white;background-color: rgb(43, 146, 190);border-color: rgb(43, 146, 190);font-size: 10px;margin-right: 1040px;" class="btn btn-warning"><b>در حال بررسی </b></button>										
+													<button v-if="item.user_unreads>0" style="position: absolute;margin-top: 10px;width: 100px;box-shadow: none;color: white;background-color: rgb(51, 190, 3);border-color: rgb(51, 190, 3);font-size: 10px;margin-right: 1040px;" class="btn btn-warning"><b>پاسخ داده شده</b></button>										
+													<!-- <button v-if="item.user_unreads>0" style="position: absolute;margin-top: 10px;width: 100px;box-shadow: none;color: white;background-color: rgb(51, 190, 3);border-color: rgb(51, 190, 3);font-size: 10px;margin-right: 1040px;" class="btn btn-warning"><b>پاسخ داده شده</b></button>										 -->
+										   		</b>
+											</a>
 		                                </div>
 		                            </li>
 		                        </ul>

@@ -35,6 +35,16 @@ export default {
           image: require("../assets/img/asli.png"),
           link: "/admin/department",
           text: "دپارتمان"
+		},
+		 {
+          image: require("../assets/img/Artboard – 18.svg"),
+          link: "/admin/users",
+          text: "کاربران"
+		},
+		{
+          image: require("../assets/img/Artboard – 15.svg"),
+          link: "/admin/favorites",
+          text: "علاقه مندی ها"
         }
       ]
     };

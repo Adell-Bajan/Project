@@ -362,22 +362,39 @@ exports.getAllDepartment = (req, res) => {
 exports.getEditDepartment = (req, res) => {
   Department.findById(req.params.id, (error, data) => {
     if (error) {
-      return next(error);
+      return (error);
     } else {
       res.json(data);
     }
   });
 };
 
+// Update department
+exports.updateDepartment = (req,res)=>{
+	Department.findByIdAndUpdate(req.params.id, {
+        $set: req.body
+    }, (error, data) => {
+        if (error) {
+            return next(error);
+        } else {
+            res.json(data)
+            console.log('Department successfully updated!')
+        }
+    })
+}
+
+
 // delete department
 exports.deleteDepartment = (req, res) => {
-  Department.findByIdAndRemove(req.params.id, (error, data) => {
-    if (error) {
-      return next(error);
-    } else {
-      res.status(200).json({
-        msg: data,
-      });
-    }
-  });
-};
+	Department.findByIdAndRemove(req.params.id, (error, data) => {
+	  if (error) {
+		return next(error);
+	  } else {
+		res.status(200).json({
+		  msg: data,
+		});
+	  }
+	});
+  };
+  
+  

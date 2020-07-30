@@ -13,16 +13,18 @@
     "lint-fix": "vue-cli-service lint --fix"
   },
   "dependencies": {
-    "core-js": "^2.6.8",
     "axios": "^0.19.2",
     "bootstrap": "^4.3.1",
     "chartist": "^0.11.0",
+    "core-js": "^2.6.8",
     "google-maps": "^3.2.1",
     "register-service-worker": "^1.5.2",
     "v-tooltip": "^2.0.0-rc.33",
     "vue": "^2.6.6",
     "vue-router": "^3.0.2",
-    "vue2-google-maps": "^0.8.4"
+    "vue2-google-maps": "^0.8.4",
+    "vuex": "^3.5.1",
+    "vuex-persistedstate": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.4.0",
